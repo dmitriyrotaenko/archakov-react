@@ -6,8 +6,8 @@ const App = () => {
 
   return (
     <>
-      <Profile name={"Карл Карлович"} registeredAt={now} />
-      <ProfileClass name={"Карл Карлович"} registeredAt={now} />
+      <Profile name="Карл Карлович" registeredAt={now} />
+      <ProfileClass name="Карл Карлович" registeredAt={now} />
     </>
   );
 };
