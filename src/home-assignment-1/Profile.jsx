@@ -1,26 +1,8 @@
 const Profile = ({ name = "Вася Пупкин", registeredAt }) => {
-  /* можно запариться и написать логику, 
-     которая будет ставить месяца в нужный падеж, 
-     но, наверное, не нужно пока
-  */
-  const months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря",
-  ];
 
-  const date = registeredAt.getDate();
-  const month = months[registeredAt.getMonth()];
-  const year = registeredAt.getFullYear();
+
+  const dateOptions = {year: "numeric", month: "long", day: "numeric"};
+  const date = registeredAt.toLocaleDateString("ru-RU", dateOptions);
 
   return (
     <div className="profile">
@@ -28,7 +10,7 @@ const Profile = ({ name = "Вася Пупкин", registeredAt }) => {
         Привет, <b>{name}!</b>
       </h3>
       <p className="profile__registered-at">
-        Дата регистрации: {`${date} ${month} ${year}`}
+        Дата регистрации: {date.slice(0, -2)}
       </p>
     </div>
   );
