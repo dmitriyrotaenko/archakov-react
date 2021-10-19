@@ -63,8 +63,8 @@ function App() {
     <div className="wrapper">
       {phrases.length ? (
         <ul className="list">
-          {phrases.map((phrase, id) => (
-            <Phrase key={id} text={phrase} />
+          {phrases.map((phrase) => (
+            <Phrase key={phrase + id} text={phrase} />
           ))}
         </ul>
       ) : (
