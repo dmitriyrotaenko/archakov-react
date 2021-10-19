@@ -52,7 +52,7 @@ function App() {
 
   function addPhrase() {
     const phrase = `${adjectives()} ${noun()}`;
-    setPhrases((prev) => [...prev, phrase]);
+    setPhrases((prev) => [phrase, ...prev]);
   }
 
   function clearList() {
