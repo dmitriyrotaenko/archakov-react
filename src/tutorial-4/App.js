@@ -26,7 +26,7 @@ function generatePhrase(arr, numberOfWords = 1) {
       return words.join(" ");
     }
     let word = arr[randomize(arr.length)];
-    /* чтобы слова во фразе были уникальными (а не непередаваемый       непередаваемый программист) 
+    /* чтобы слова во фразе были уникальными (а не непередаваемый непередаваемый программист) 
       будем проверять, если ли уже это рандомное слово в массиве words
     */
     while (words.includes(word)) {
@@ -34,7 +34,7 @@ function generatePhrase(arr, numberOfWords = 1) {
     }
     /* как только нашли слово, которого в массиве нет - пушим его*/
     words.push(word);
-    /* ведём счётчик вызова функции. Нужно для того, чтобы сравнивать с   начальным значением numberOfWords. Например для прилагательных 2 вызова должно быть
+    /* ведём счётчик вызова функции. Нужно для того, чтобы сравнивать сначальным значением numberOfWords. Например для прилагательных 2 вызова должно быть
      */
     executedTimes++;
     /* рекурсивно вызываем внутреннюю функцию для следующего слова */
@@ -63,8 +63,8 @@ function App() {
     <div className="wrapper">
       {phrases.length ? (
         <ul className="list">
-          {phrases.map((phrase) => (
-            <Phrase key={phrase + id} text={phrase} />
+          {phrases.map((phrase, id) => (
+            <Phrase key={id} text={phrase} />
           ))}
         </ul>
       ) : (
