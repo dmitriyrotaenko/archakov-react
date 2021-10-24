@@ -1,0 +1,2 @@
+export const HANDLE_INPUT_CHANGE = "HANDLE_INPUT_CHANGE";
+export const FORM_RESET = "FORM_RESET";
