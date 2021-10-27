@@ -6,10 +6,6 @@ export const initialFormState = {
   message: "",
 };
 
-export function initFormReducer(initialFormState) {
-  return initialFormState;
-}
-
 
 export function FormReducer(state, action) {
   const { type, field, value } = action;
@@ -20,7 +16,7 @@ export function FormReducer(state, action) {
         [field]: value
       };
     case FormReducerTypes.FORM_RESET:
-      return initFormReducer(initialFormState)
+      return initialFormState;
     default:
       return state;
   }

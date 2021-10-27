@@ -49,12 +49,12 @@ function App() {
 
   function removeComment(id) {
     const filtered = comments.filter((comment) => comment.id !== id);
-    setComments([...filtered]);
+    setComments(filtered);
   }
 
   return (
     <div>
-      <List sx={{ ...listStyles }}>
+      <List sx={listStyles}>
         <Typography variant="h6" component="div">
           Отзывы:
         </Typography>

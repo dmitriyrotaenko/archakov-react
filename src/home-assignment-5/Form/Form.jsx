@@ -4,7 +4,7 @@ import React from "react";
 
 import { Box, TextField, Button, Typography } from "@mui/material";
 
-import { initialFormState, FormReducer, initFormReducer } from "./FormReducer";
+import { initialFormState, FormReducer } from "./FormReducer";
 import * as FormReducerTypes from "./FormReducer.types";
 
 const formStyles = {
@@ -20,11 +20,7 @@ const formStyles = {
 
 function Form({ onAddComment }) {
   // Я усложнил и можно было через useState, но хотел попрактиковать reducer
-  const [formState, dispatch] = React.useReducer(
-    FormReducer,
-    initialFormState,
-    initFormReducer
-  );
+  const [formState, dispatch] = React.useReducer(FormReducer, initialFormState);
 
   function handleInputChange({ target }) {
     dispatch({
@@ -40,11 +36,7 @@ function Form({ onAddComment }) {
     const withValuesTrimmed = {};
 
     // убираем GMT и прочую инфу
-    const createdAt = new Date()
-    .toString()
-    .split(" ")
-    .splice(0, 5)
-    .join(" ");
+    const createdAt = new Date().toString().split(" ").splice(0, 5).join(" ");
 
     // наверное, этого как-то можно избежать
     for (const field in formState) {
@@ -57,13 +49,7 @@ function Form({ onAddComment }) {
   }
 
   return (
-    <Box
-      onSubmit={handleOnSubmit}
-      component="form"
-      sx={{
-        ...formStyles,
-      }}
-    >
+    <Box onSubmit={handleOnSubmit} component="form" sx={formStyles}>
       <Typography variant="h6" component="div">
         Обратная связь:
       </Typography>
